@@ -3,9 +3,9 @@
 #include <stdio.h>
 /*more headers goes there */
 
-/*betty style doc for function main goes ther */
+/*betty style doc function main goes there */
 /**
- * main-radom integer number
+ * main-random integer number
  *
  * Return:0
  */
