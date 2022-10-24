@@ -5,7 +5,7 @@
 
 /*betty style doc function main goes there */
 /**
- * main-random integer number
+ * main-a random integer number
  *
  * Return:0
  */
