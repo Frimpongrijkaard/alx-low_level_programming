@@ -1,12 +1,11 @@
 #include "main.h"
-
 /**
- * leet- encodes string 
- * @n: input
+ * leet- encode the following string
+ * @n: input string
  *
- * Return: the value of n
+ * Return: return the string
  */
-char *leet(char *)
+char *leet(char *n)
 {
 	int i, j;
 	char s1[] = "aAeEoOtTlL";
