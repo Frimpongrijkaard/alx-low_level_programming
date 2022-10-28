@@ -47,9 +47,9 @@ int main(void)
 		f2 = tmp;
 		f20 = tmpo;
 		if (i != 98)
-			printf(',');
+			printf(",");
 		else
-			printf('\n');
+			printf("\n");
 		i++;
 	}
 	return (0);
