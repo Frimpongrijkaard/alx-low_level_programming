@@ -14,7 +14,7 @@ char *cap_string(char *s)
 
 	if ((*(s + i) >= 97) && (*(s + i) <= 122))
 		*(s + i) = *(s + i) - 32;
-	i++;
+	        i++;
 	while (*(s + i) != '\0')
 	{
 		for (n = 0; n < 13; n++)
