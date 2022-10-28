@@ -2,37 +2,31 @@
 
 /**
  * cap_string- catitalze all words
- * @str: string
+ * @s: string
  *
  * Return: pointer to strings
  */
-char *cap_string(char *)
+char *cap_string(char *s)
 {
-	int i = 0;
+	int i = 0, n;
 
-	while (str[i])
+	int cap_words[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+
+	if ((*(s + i) >= 97) && (*(s + i) <= 122))
+		*(s + i) = *(s + i) - 32;
+	i++;
+	while (*(s + i) != '\0')
 	{
-		while (!(str[i] >= 'a' && str[i] <= 'z'))
+		for (n = 0; n < 13; n++)
 		{
-			i++;
+			if (*(s + i) == cap_words[i])
+			{
+				if ((*(s + (i + 1)) >= 97) && (*(s + (i + 1)) <= 122))
+					*(s + (i + 1)) = *(s + (i + 1)) - 32;
+				break;
+			}
 		}
-		if (str[i - 1] == ' ' ||
-		    str[i - 1] == '\t' ||
-		    str[i - 1] == '\n' ||
-                    str[i - 1] == ',' ||
-		    str[i - 1] == ';' ||
-		    str[i - 1] == '.' ||
-		    str[i - 1] == '!' ||
-		    str[i - 1] == '?' ||
-		    str[i - 1] == '"' ||
-		    str[i - 1] == '(' ||
-		    str[i - 1] == ')' ||
-		    str[i - 1] == '{' ||
-		    str[i - 1] == '}' ||
-		    i == 0)
-		{
-			str[i] -= 32;
-			i++;
-		}
-		return (str);
+		i++;
+	}
+	return (s);
 }
