@@ -1,7 +1,7 @@
-#include "main"
+#include "main.h"
 /**
  * reverse_array- reverse ararray
- * @a: number of a
+ * @a: number of array.
  * @n: number of size
  *
  * Return: 0
