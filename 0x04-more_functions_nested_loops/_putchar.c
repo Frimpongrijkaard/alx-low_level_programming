@@ -1,0 +1,12 @@
+#include <unistd.h>
+/**
+ * _putchar- write the character c to stdout
+ * @c: The character to print
+ *
+ * Return: on success 1
+ * on error, -1 is returned, and erro is set appropriately
+ */
+int _putcha(char c)
+{
+	return(wrte(1, &c, 1));
+}
