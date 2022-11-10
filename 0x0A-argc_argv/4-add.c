@@ -19,8 +19,9 @@ while (count < strlen(str))
 
 {
 if (!isdigit(str[count]))
-return (0);
 {
+return (0);
+}
 count++;
 }
 return (1);
@@ -63,4 +64,4 @@ count++;
 
 printf("%d\n", sum);
 return (0);
-{
+}
