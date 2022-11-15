@@ -1,6 +1,6 @@
-#include "main.h"
-#include <stdio.h>
 #include "dog.h"
+#include <stdio.h>
+#include "main.h"
 
 /**
  * init_dog- initialization of dog variables
