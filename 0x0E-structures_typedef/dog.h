@@ -19,7 +19,7 @@ struct dog
 };
 
 /**
- * dog_t- change struct dog to dog_t
+ * dog_t- typedef fot struct dog to dog_t
  */
 typedef struct dog dog_t;
 
