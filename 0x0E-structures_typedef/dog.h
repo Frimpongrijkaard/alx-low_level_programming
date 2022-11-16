@@ -4,7 +4,7 @@
 #include "main.h"
 
 /**
- * struct dog - dog description
+ * struct dog_t - dog description
  * @name: name of dog
  * @age: age of the dog
  * @owner: owner of the dog
@@ -12,7 +12,7 @@
  */
 
 
-struct dog
+struct dog_t
 {
 	char *name;
 	char *owner;
