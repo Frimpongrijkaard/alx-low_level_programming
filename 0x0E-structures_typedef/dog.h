@@ -4,18 +4,23 @@
 #include "main.h"
 
 /**
- * struct dog_t - dog description
+ * struct dog - dog description
  * @name: name of dog
  * @age: age of the dog
  * @owner: owner of the dog
  *
  */
 
-
-struct dog_t
+struct dog
 {
 	char *name;
 	char *owner;
 	float age;
 };
+
+/**
+ * dog_t- change struct dog to dog_t
+ */
+typedef struct dog dog_t;
+
 #endif
