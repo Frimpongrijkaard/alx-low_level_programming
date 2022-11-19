@@ -18,22 +18,22 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	arg1 = atoi(argv[1]);
-	arg2 = atoi(argv[3]);
+	arg1 = atoi(argv[2]);
+	arg2 = atoi(argv[1]);
 
 	func = get_op_func(argv[2]);
 
 	if (!func)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 	n = *argv[2];
 
-	if ((n == '/' || n == '%') && arg2 == 0)
+	if (n  == NULL)
 	{
 		printf("Error\n");
-		exit(100);
+		exit(99);
 	}
 	sum = func(arg1, arg2);
 
