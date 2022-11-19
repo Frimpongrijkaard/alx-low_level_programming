@@ -38,5 +38,6 @@ int main(int argc, char *argv[])
 		}
 		printf("%02hhx", arr[n]);
 	}
+	printf("\n");
 	return (0);
 }
