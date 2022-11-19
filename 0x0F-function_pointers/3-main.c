@@ -9,8 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int arg1, arg2, sum;
-	char n;
+	int a, b;
 	int (*func)(int, int);
 
 	if (argc != 4)
@@ -18,26 +17,21 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	arg1 = atoi(argv[1]);
-	arg2 = atoi(argv[2]);
 
-	func = get_op_func(argv[2]);
-
-	if (!func)
+	if (argv[2][1])
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	n = *argv[2];
+	func = get_op_func(argv[2]);
 
 	if (func == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	sum = func(arg1, arg2);
-
-	printf("%d\n", sum);
-
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	printf("%d\n",  func(a, b));
 	return (0);
 }
