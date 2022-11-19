@@ -31,12 +31,9 @@ int main(int argc, char *argv[])
 
 	for (n = 0; n < bytes; n++)
 	{
-		if (n != (bytes - 1))
-		{
-			printf("%02hhx\n", arr[n]);
-			break;
-		}
-		printf("%02hhx", arr[n]);
+		printf("%02x", arr[n] & 0xFF);
+		if (n != bytes - 1)
+			printf(" ");
 	}
 	printf("\n");
 	return (0);
