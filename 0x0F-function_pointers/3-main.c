@@ -18,8 +18,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	arg1 = atoi(argv[2]);
-	arg2 = atoi(argv[1]);
+	arg1 = atoi(argv[1]);
+	arg2 = atoi(argv[2]);
 
 	func = get_op_func(argv[2]);
 
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	}
 	n = *argv[2];
 
-	if (n  == NULL)
+	if (func == NULL)
 	{
 		printf("Error\n");
 		exit(99);
