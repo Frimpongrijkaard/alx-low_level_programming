@@ -1,10 +1,10 @@
 #include "dog.h"
-#include <stdio.h>
-#include "main.h"
+#include <stdlib.h>
+
 
 /**
  * init_dog- initialization of dog variables
- * @d: structure d variable
+ * @d: The dog to be initializede
  * @name: charater name
  * @age: age in float of the dog
  * @owner: owner of the dog
