@@ -1,0 +1,376 @@
+From 219eb00f89afd42cfd65338a59a62602bf338bcc Mon Sep 17 00:00:00 2001
+From: Frimpongrijkaard <frimpongrijkaard94@yahoo.com>
+Date: Mon, 2 Jan 2023 09:24:45 +0000
+Subject: [PATCH 1/2] task updated
+
+---
+ 0x0B-malloc_free/0-create_array.c | 22 ++++++++++
+ 0x0B-malloc_free/1-strdup.c       | 26 +++++++++++
+ 0x0B-malloc_free/100-argstostr.c  | 42 ++++++++++++++++++
+ 0x0B-malloc_free/101-strtow.c     | 72 +++++++++++++++++++++++++++++++
+ 0x0B-malloc_free/2-str_concat.c   | 35 +++++++++++++++
+ 0x0B-malloc_free/3-alloc_grid.c   | 40 +++++++++++++++++
+ 0x0B-malloc_free/4-free_grid.c    | 20 +++++++++
+ 0x0B-malloc_free/README.md        |  1 +
+ 0x0B-malloc_free/_putchar.c       | 14 ++++++
+ 0x0B-malloc_free/main.h           | 13 ++++++
+ 10 files changed, 285 insertions(+)
+ create mode 100644 0x0B-malloc_free/0-create_array.c
+ create mode 100644 0x0B-malloc_free/1-strdup.c
+ create mode 100644 0x0B-malloc_free/100-argstostr.c
+ create mode 100644 0x0B-malloc_free/101-strtow.c
+ create mode 100644 0x0B-malloc_free/2-str_concat.c
+ create mode 100644 0x0B-malloc_free/3-alloc_grid.c
+ create mode 100644 0x0B-malloc_free/4-free_grid.c
+ create mode 100644 0x0B-malloc_free/README.md
+ create mode 100644 0x0B-malloc_free/_putchar.c
+ create mode 100644 0x0B-malloc_free/main.h
+
+diff --git a/0x0B-malloc_free/0-create_array.c b/0x0B-malloc_free/0-create_array.c
+new file mode 100644
+index 0000000..772813f
+--- /dev/null
++++ b/0x0B-malloc_free/0-create_array.c
+@@ -0,0 +1,22 @@
++#include "main.h"
++#include <stdlib.h>
++
++/**
++ *creat_array- create array of size and assign
++ *char c
++ *@size: size of array
++ *@c: char to assign
++ *Return: pointer to array, NULL if fail
++ */
++char *create_array(unsigned int size, char c)
++{
++	char *str;
++	unsigned int i;
++
++	str = malloc(sizeof(char) * size);
++	if (size == 0 || str == NULL)
++		return (NULL);
++	for (i = 0; i < size; i++)
++		str[i] = c;
++	return (str);
++}
+diff --git a/0x0B-malloc_free/1-strdup.c b/0x0B-malloc_free/1-strdup.c
+new file mode 100644
+index 0000000..8287edd
+--- /dev/null
++++ b/0x0B-malloc_free/1-strdup.c
+@@ -0,0 +1,26 @@
++#include "main.h"
++#include <stdlib.h>
++#include <stdio.h>
++
++/**
++ *_strdup - duplicate to a new memory space location
++ *@str: char str
++ *Return: 0
++ */
++char *_strdup(char *str)
++{
++	char *a;
++	int i, r = 0;
++
++	if (str == NULL)
++		return (NULL);
++	i = 0;
++	while (str[i] != '\0')
++		i++;
++	a = = malloc(sizeof(char) * (i + 1));
++	if (a == NULL)
++		return (NULL);
++	for (r = 0; str[r]; r++)
++		a[r] =  str[r];
++	return (a);
++}
+diff --git a/0x0B-malloc_free/100-argstostr.c b/0x0B-malloc_free/100-argstostr.c
+new file mode 100644
+index 0000000..0033a16
+--- /dev/null
++++ b/0x0B-malloc_free/100-argstostr.c
+@@ -0,0 +1,42 @@
++#include "main.h"
++#include <stdlib.h>
++
++/**
++ *argstostr - main entry
++ *@ac: int input
++ *@av: double pointer array
++ *Return: 0
++ */
++char *argstostr(int ac, char **av)
++{
++	int i, n, r = 0, l = 0;
++	char *str;
++
++	if (ac == 0 || av == NULL)
++		return (NULL);
++
++	for (i = 0; i < ac; i++)
++	{
++		for (n = 0; av[i][n]; n++)
++			i++;
++	}
++	l += ac;
++
++	str = malloc(sizeof(char) * l + 1);
++	if (str == NULL)
++		return (NULL);
++	for (i = 0; i < ac; i++)
++	{
++	for (n = 0; av[i][n]; n++)
++	{
++		str[r] = av[i][n];
++		r++;
++	}
++	if (str[r] == '\0')
++	{
++		str[r++] = '\n';
++	}
++
++	}
++	return (str);
++}
+diff --git a/0x0B-malloc_free/101-strtow.c b/0x0B-malloc_free/101-strtow.c
+new file mode 100644
+index 0000000..57af518
+--- /dev/null
++++ b/0x0B-malloc_free/101-strtow.c
+@@ -0,0 +1,72 @@
++#include "main.h"
++#include <stdlib.h>
++
++/**
++ *count_word - helper function to count the number
++ *of word in a string
++ *@s: string to evaluate
++ *
++ * Return: number of words
++ */
++int count_word(char*s)
++{
++	int flag, c, w;
++
++	flag = 0;
++	w = 0;
++
++	for (c = 0; s[c] != '\0'; c++)
++	{
++		if (s[c] == '')
++			flag = 0;
++		else if (flag == 0)
++			flag = 1;
++                        w++;
++	}
++	return (w);
++}
++/**
++ *strtow- splits a string into words
++ *@str: string to split
++ *
++ * Return: pointer to an array of string
++ * or NULL(Error)
++ */
++char**strtow(char*str)
++{
++	char **matrix, *tmp;
++	int i, k = 0, len = 0, words, c = 0, start, end;
++
++	while (*(str + len))
++		len++;
++	words = count_word(str);
++	if (words == 0)
++		return (NULL);
++	matrix = (char **) malloc(sizeof(char *) * (words + 1));
++	if (matrix == NULL)
++		return (NULL);
++	for (i = 0; i <= len; i++)
++	{
++		if (str[i] == ' ' || str[i] == '\0')
++		{
++			if (c)
++			{
++				end = i;
++				tmp = (char *) malloc(sizeof(char) * (c + 1));
++				if (tmp == NULL)
++					return (NULL);
++				while (start < end)
++				*tmp++ = str[start++];
++				*tmp = '\0';
++				k++;
++				c = 0;
++			}
++		}
++		else if (c++ == 0)
++		{
++			start = i;
++		}
++	}
++	matrix[k] = NULL;
++	return (matrix);
++}
+diff --git a/0x0B-malloc_free/2-str_concat.c b/0x0B-malloc_free/2-str_concat.c
+new file mode 100644
+index 0000000..cf8afdc
+--- /dev/null
++++ b/0x0B-malloc_free/2-str_concat.c
+@@ -0,0 +1,35 @@
++#include "main.h"
++#include <stdlib.h>
++
++/**
++ *str_concat - get ends of input and add together for size
++ *@s1: input one to concat
++ *@s2: input two to concat
++ *
++ *Return: concat concat of s1 and s2
++ */
++
++char *str_concat(char *s1, char *s2)
++{
++	char *conct;
++	int i, ci;
++
++	if (s1 == NULL)
++		s1 = "";
++	if (s2 == NULL)
++		s2 = "";
++	i = ci = 0;
++
++	while (s1[i] != '\0')
++		i++;
++	while (s2[ci] != '\0')
++		ci++;
++	while (s2[ci] != '\0')
++	{
++		conct[i] = s2[ci];
++		++, ci++;
++	}
++
++	conct[i] = '\0';
++	return (conct);
++}
+diff --git a/0x0B-malloc_free/3-alloc_grid.c b/0x0B-malloc_free/3-alloc_grid.c
+new file mode 100644
+index 0000000..0fa8919
+--- /dev/null
++++ b/0x0B-malloc_free/3-alloc_grid.c
+@@ -0,0 +1,40 @@
++#include "main.h"
++#include <stdlib.h>
++
++/**
++ *alloc_grid -nested loop to make grid
++ *@width: width input
++ *@height: height input
++ *Return: pointer to 2 dim. array
++ */
++int **alloc_grid(int width, int height)
++{
++	int **mee;
++	int x, y;
++
++	if (width <= 0 || height <= 0)
++		return (NULL);
++
++	mee = malloc(sizeof(int *) * height);
++
++	if (mee == NULL)
++		return (NULL);
++
++	for (x = 0; x < height; x++)
++	{
++		mee[x] = malloc(sizeof(int) * width);
++		if (mee[x] == NULL)
++		{
++			for (; x >= 0; x--)
++				free(mee[x]);
++			free(mee);
++			return (NULL);
++		}
++	}
++	for (x = 0; x < height; x++)
++	{
++		for (y = 0; y < width; y++)
++			mee[x][y] = 0;
++	}
++	return (mee);
++}
+diff --git a/0x0B-malloc_free/4-free_grid.c b/0x0B-malloc_free/4-free_grid.c
+new file mode 100644
+index 0000000..db2a1ed
+--- /dev/null
++++ b/0x0B-malloc_free/4-free_grid.c
+@@ -0,0 +1,20 @@
++#include "main.h"
++#include <stdlib.h>
++#include <stdio.h>
++
++/**
++ * free_grid - free 2d array
++ * @grid: 2d grid
++ * @height height dimensin of grid
++ * Return: nothing
++ */
++void free_grid(int **grid, int height)
++{
++	int i;
++
++	for (i = 0; i < height; i++)
++	{
++		free(grid[i]);
++	}
++	free(grid);
++}
+diff --git a/0x0B-malloc_free/README.md b/0x0B-malloc_free/README.md
+new file mode 100644
+index 0000000..19d35a0
+--- /dev/null
++++ b/0x0B-malloc_free/README.md
+@@ -0,0 +1 @@
++this alx task is about malloc and free (memory allocation)
+diff --git a/0x0B-malloc_free/_putchar.c b/0x0B-malloc_free/_putchar.c
+new file mode 100644
+index 0000000..7156d0e
+--- /dev/null
++++ b/0x0B-malloc_free/_putchar.c
+@@ -0,0 +1,14 @@
++#include "main.h"
++#include <unistd.h>
++
++/**
++ *_putchar - writes the character c to stdout
++ *@c: the cgarater to print
++ *
++ *Return: On success 1.
++ *On error, -1 is returned, and errno ist set appropriately.
++ */
++int _putchar(char c)
++{
++	return (write(1, &c, 1));
++}
+diff --git a/0x0B-malloc_free/main.h b/0x0B-malloc_free/main.h
+new file mode 100644
+index 0000000..71b4c01
+--- /dev/null
++++ b/0x0B-malloc_free/main.h
+@@ -0,0 +1,13 @@
++#ifndef MAIN_H
++#define MAIN_H
++
++char *create_array(unsigned int size, char c);
++char *_strdup(char *str);
++char *str_concat(char *s1, char *s2);
++int **alloc_grid(int width, int height);
++void free_grid(int **grid, int height);
++char *argstostr(int ac, char **av);
++char **strtow(char *str);
++int _putchar(char c);
++
++#endif
+-- 
+2.38.1.windows.1
+

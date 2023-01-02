@@ -1,0 +1,40 @@
+From a0288980a6a2d853fe1d0af9319c7af646af0f82 Mon Sep 17 00:00:00 2001
+From: Frimpongrijkaard <frimpongrijkaard94@yahoo.com>
+Date: Mon, 2 Jan 2023 09:36:32 +0000
+Subject: [PATCH 2/2] all file
+
+---
+ 0x13-more_singly_linked_lists/0-print_listint.c |   2 +-
+ 0x14-bit_manipulation/.101-password.swp         | Bin 0 -> 12288 bytes
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 0x14-bit_manipulation/.101-password.swp
+
+diff --git a/0x13-more_singly_linked_lists/0-print_listint.c b/0x13-more_singly_linked_lists/0-print_listint.c
+index c1dc61f..eea28e1 100644
+--- a/0x13-more_singly_linked_lists/0-print_listint.c
++++ b/0x13-more_singly_linked_lists/0-print_listint.c
+@@ -1,5 +1,5 @@
+-#include "lists.h"
+ #include <stdio.h>
++#include "lists.h"
+ 
+ /**
+  * print_listint - prints all the elements of a list.
+diff --git a/0x14-bit_manipulation/.101-password.swp b/0x14-bit_manipulation/.101-password.swp
+new file mode 100644
+index 0000000000000000000000000000000000000000..e86e252fdebf22afc5761b5eb7c699958c98e7f2
+GIT binary patch
+literal 12288
+zcmeI%K}rKL6oBE3;8GO5K-Gn-I5Smo4$z8HMA5cOhg53`WF}!cwO#26JcqaO0NzAb
+zPM|L1-ugcXA$gAn@7slplHtW=D?4n9Cbon)cz?a`-9+MTU5K+v7tWSG^J{dvx4r(=
+zwLD3OS+{>0tbJZKjFnkPW9PXUKaEZ9Dm$rEQRs3KCyVr0j&z+Ds?=^~RIP0pr%5WE
+znoj4odI)wWfdB$Qfm!`1vyH(~J57Ae{@!kDXL}GVCxHM02q1s}0tg_000OHgP`gOH
+zG-ItTM~edc>P^l>2q1s}0tg_000IagfB*sr{2u|;e5ikH3h~t}|NsB<{`coke@7sI
+c00IagfB*srAb<b@2q1vK9~L;b=B^{Y0gSpbeE<Le
+
+literal 0
+HcmV?d00001
+
+-- 
+2.38.1.windows.1
+
