@@ -10,6 +10,7 @@
  * @value: value to search
  * Return: index of the number
  */
+
 int recursive_search(int *array, size_t size, int value)
 {
 	size_t half = size / 2;
@@ -48,16 +49,17 @@ int recursive_search(int *array, size_t size, int value)
  * @value: value to search 
  * Return: index of the number
  */
+
 int binary_search(int *array, size_t size, int value)
 {
-	int ind;
+	int index;
 
-	ind = recursive_search(array, size, value);
+	index = recursive_search(array, size, value);
 
-	if (ind >= 0 && array[ind] != value)
+	if (index >= 0 && array[index] != value)
 		return (-1);
 
-	return (ind);
+	return (index);
 }
 
 /**
@@ -69,6 +71,7 @@ int binary_search(int *array, size_t size, int value)
  * @value: value to search
  * Return: index of the number
  */
+
 int exponential_search(int *array, size_t size, int value)
 {
 	size_t index, next;
